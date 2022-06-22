@@ -11,10 +11,10 @@ For identifying redundancy we can use 4 parameters:
 3. The distance between alignments that should be closed to combined alignments = gap
 4. The largest size of contigs that should be considered potentially redundant ( i.e we do not expect large contigs to be contained within even larger ones, plus these would be very obvious in dotplots) = contigsize
 
-Therefore only alignments with an identity greater than *identity*% are kept
-Single contiguous non-redudant alignments are calculated after filling gaps <= *gap*
-Single alignments which cover > *overlap*% of the contig are identified
-If this percentage cover is greater than that of the corresponding contig (i.e the contig is smaller than that which is had aligned to), then it is considered the redudndant contig
+Therefore only alignments with an identity greater than *identity*% are kept <br/>
+Single contiguous non-redudant alignments are calculated after filling gaps <= *gap* <br/>
+Single alignments which cover > *overlap*% of the contig are identified <br/>
+If this percentage cover is greater than that of the corresponding contig (i.e the contig is smaller than that which is had aligned to), then it is considered the redudndant contig <br/>
 
 
 Below I will use a 99% identity and overlap wih a 10bp gap and only look for redudancy in contigs smaller than 500kb <br/>
@@ -63,4 +63,7 @@ For example: An overlap of at greater than 99.9% would be overlap="999" as this 
     #extract only those contigs to keep
     samtools faidx ${genome} ${listkeep} > ${genome2}.nonredundant.fa
 
-The output is the \*nonredundant.fa file which has the redudant contigs removed
+The output is the \*nonredundant.fa file which has the redudant contigs removed <br/>
+And also a directorry containing all the preliminary files <br/>
+One preliminary file 'OFINTEREST.\*.tsv' is the alignments considered of interest to the removal process, i.e all those that matched the final criteria <br/>
+The rest are files per contig considered or redundancy such as the raw blast match filtered for only matches above the identity parameter
