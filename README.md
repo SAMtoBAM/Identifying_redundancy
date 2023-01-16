@@ -4,12 +4,13 @@ This is useful for regions that are repetitive and/or high copy number which can
 For example this often happens when the mitochondrial genome is assembled <br/>
 
 ALTERNATIVE FOUND AT A LATER DATE AND EASIER::<br/>
-Just install funannotate and then run the function funannotate clean
-Provides an output and some verbatim telling you how many contigs were removed and the identity and coverage
-Below I use the threshold of 99% covered and 99% basepair identity
-Much quicker and easier (wish I knew of this before)
-        mamba create -n funannotate -c bioconda funannotate
-        funannotate clean -i genome.fa -o genome.cleaned.fa -p 99 -c 99
+Just install funannotate and then run the function funannotate clean <br/>
+Provides an output and some verbatim telling you how many contigs were removed and the identity and coverage <br/> 
+Below I use the threshold of 99% covered and 99% basepair identity <br/>
+Much quicker and easier (wish I knew of this before) <br/>
+
+        mamba create -n funannotate -c bioconda funannotate <br/>
+        funannotate clean -i genome.fa -o genome.cleaned.fa -p 99 -c 99 
 
 For this you need only two tools installed and in path, BLAST and samtools
 
